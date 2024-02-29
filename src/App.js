@@ -1,20 +1,13 @@
-import React from "react";
-import { UseSelector, useDispatch, useSelector } from "react-redux";
-import {increment, decrement} from './actions';
+import AddTodo from './components/AddTodo';
+import Todos from './components/Todos';
 
 function App() {
-  const counter = useSelector(state => state.counter);
-  const isLogged = useSelector(state => state.isLogged);
-  const dispatch = useDispatch();
-
   return (
-    <div className="App">
-      <h1>Counter {counter}</h1>
-      <button onClick={() => dispatch(increment())}>+</button>
-      <button onClick={() => dispatch(decrement())}>-</button>
-      {isLogged ? <h3>Valueable Information I shouldn't see</h3> : ''}
+    <div className='App'>
+      <AddTodo />
+      <Todos />
     </div>
-  );
+  )
 }
 
 export default App;
